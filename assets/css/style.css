@@ -359,3 +359,57 @@ body {
     overflow-wrap: anywhere;
   }
 }
+
+@media (max-width: 820px) {
+
+  /* Prevent navigation controls from expanding viewport */
+  .slide-navigation,
+  .slide-nav,
+  .section-navigation,
+  .progress-navigation,
+  .slide-pagination {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Keep slide numbers compact */
+  .slide-navigation *,
+  .slide-nav *,
+  .section-navigation *,
+  .progress-navigation *,
+  .slide-pagination * {
+    box-sizing: border-box;
+  }
+
+}
+
+/* =========================================
+   FIX SECTION CONTROLS — MOBILE
+   ========================================= */
+
+@media (max-width: 820px) {
+  .section-controls {
+    position: fixed !important;
+
+    right: 12px !important;
+    left: auto !important;
+    bottom: 12px !important;
+    top: auto !important;
+
+    width: auto !important;
+    max-width: calc(100vw - 24px) !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: none !important;
+    margin: 0 !important;
+
+    z-index: 9999;
+  }
+}
