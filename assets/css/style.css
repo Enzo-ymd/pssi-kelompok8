@@ -250,3 +250,112 @@
     font-size: 8px;
   }
 }
+
+
+/* =========================================
+   GLOBAL MOBILE HORIZONTAL OVERFLOW FIX
+   ========================================= */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@media (max-width: 820px) {
+
+  html,
+  body {
+    overflow-x: clip;
+    max-width: 100%;
+  }
+
+  body {
+    position: relative;
+  }
+
+  /* Main page containers */
+  main,
+  #chapters,
+  .hero,
+  .hero-inner,
+  .chapter-section,
+  .section-shell,
+  .section-head,
+  .section-body,
+  .content-flow {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Hero cover */
+  .hero {
+    width: 100%;
+    overflow-x: clip;
+  }
+
+  .hero-inner {
+    width: 88%;
+    margin-inline: auto;
+  }
+
+  .hero h1,
+  .hero-subtitle,
+  .hero-description {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  /* Prevent wide grids and content from expanding the page */
+  .section-body,
+  .content-flow {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .content-flow > * {
+    max-width: 100%;
+  }
+
+  /* Tables and diagrams can scroll internally if necessary */
+  .comparison-scroll,
+  .diagram-wrap,
+  .matrix-component {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .comparison-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .comparison-table {
+    min-width: 600px;
+  }
+
+  /* Images and media */
+  img,
+  video,
+  iframe,
+  svg {
+    max-width: 100%;
+  }
+
+  /* Long text */
+  p,
+  li,
+  h1,
+  h2,
+  h3,
+  h4 {
+    overflow-wrap: anywhere;
+  }
+}
